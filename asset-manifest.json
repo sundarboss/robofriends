@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/robofriends/static/css/main.dbed6ef4.chunk.css",
+    "main.js": "/robofriends/static/js/main.c518fcad.chunk.js",
+    "main.js.map": "/robofriends/static/js/main.c518fcad.chunk.js.map",
+    "runtime-main.js": "/robofriends/static/js/runtime-main.a1071882.js",
+    "runtime-main.js.map": "/robofriends/static/js/runtime-main.a1071882.js.map",
+    "static/css/2.eb45ad44.chunk.css": "/robofriends/static/css/2.eb45ad44.chunk.css",
+    "static/js/2.6b65a726.chunk.js": "/robofriends/static/js/2.6b65a726.chunk.js",
+    "static/js/2.6b65a726.chunk.js.map": "/robofriends/static/js/2.6b65a726.chunk.js.map",
+    "index.html": "/robofriends/index.html",
+    "precache-manifest.fe6530827592849f171ee52c309f2112.js": "/robofriends/precache-manifest.fe6530827592849f171ee52c309f2112.js",
+    "service-worker.js": "/robofriends/service-worker.js",
+    "static/css/2.eb45ad44.chunk.css.map": "/robofriends/static/css/2.eb45ad44.chunk.css.map",
+    "static/css/main.dbed6ef4.chunk.css.map": "/robofriends/static/css/main.dbed6ef4.chunk.css.map",
+    "static/media/App.css": "/robofriends/static/media/MingguPagi.9cd3334e.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a1071882.js",
+    "static/css/2.eb45ad44.chunk.css",
+    "static/js/2.6b65a726.chunk.js",
+    "static/css/main.dbed6ef4.chunk.css",
+    "static/js/main.c518fcad.chunk.js"
+  ]
+}
