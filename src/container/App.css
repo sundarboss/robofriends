@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'MINGGU PAGI Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('MINGGU PAGI Regular'), url('MingguPagi.woff') format('woff');
+}
+
+h1 {
+    font-family: MINGGU PAGI Regular;
+    font-weight: 200;
+    color: #0ccac4;
+}
