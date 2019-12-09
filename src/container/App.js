@@ -1,39 +1,35 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import CardList from '../component/CardList';
 import SearchBox from '../component/SearchBox';
 import Scroll from '../component/Scroll';
 import './App.css';
-import jsonplaceholder from '../api/jsonplaceholder';
 import ErrorBoundry from '../component/ErrorBoundry';
+import { setSearchField, requestForRobots } from '../actions';
+
 
 class App extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            robots: [],
-            searchfield: ''
-        }
-    }
-
+    
     componentDidMount() {
-        this.fetchUsers();
+        this.props.requestForRobots();
     }
 
-    fetchUsers = async () => {
-        const response = await jsonplaceholder.get('/users');
-        this.setState({ robots: response.data });
-    }
 
+    //This part can be used if we like to mention only the action name in the connect function.
+    //Here the action will be dispatched automatically. No need to dispatch manually
     onSearchChange = (e) => {
-        this.setState({ searchfield: e.target.value });
+        this.props.setSearchField(e.target.value);
     }
+
+    
 
     render () {
-        const filteredRobots = this.state.robots.filter((robot) => {
-            return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        const { searchField, robots } = this.props;
+        const filteredRobots = robots.filter((robot) => {
+            return robot.name.toLowerCase().includes(searchField.toLowerCase())
         });
 
-        if (this.state.robots.length === 0) {
+        if (robots.length === 0) {
             return (
                 <h1>Loading</h1>
             );
@@ -53,4 +49,21 @@ class App extends React.Component {
     }        
 }
 
-export default App;
+//This code block is used if we like to dispatch the action manually.
+//const mapDispatchToProps = (dispatch) => {
+//    return {
+//        onSearchChange: (event) => dispatch(setSearchField(event.target.value))
+//    };
+//}
+
+const mapStateToProps = (state) => {
+    return {
+        searchField: state.searchRobots.searchField,
+        robots: state.requestRobots.robots
+    };
+}
+
+//export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+//This line of code is used to if we dispatch the action automatically. We just mention the action name.
+export default connect(mapStateToProps, { setSearchField, requestForRobots })(App);
